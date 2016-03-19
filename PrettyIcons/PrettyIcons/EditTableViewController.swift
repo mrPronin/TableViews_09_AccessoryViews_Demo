@@ -19,12 +19,6 @@ class EditTableViewController: UITableViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
   
   override func viewWillAppear(animated: Bool) {
@@ -64,7 +58,14 @@ class EditTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GoToRating" {
+            if let ratingController = segue.destinationViewController as? RatingTableViewController {
+                ratingController.icon = icon
+            }
+        }
+    }
 
 
 }

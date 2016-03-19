@@ -54,14 +54,6 @@ class ViewController: UIViewController {
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "GoToDetail" {
-      let detailViewController = segue.destinationViewController as? DetailViewController
-      if let indexPath = tableView.indexPathForSelectedRow {
-        let set = iconSets[indexPath.section]
-        let icon = set.icons[indexPath.row]
-        detailViewController?.icon = icon
-      }
-    }
     if segue.identifier == "GoToEdit" {
       let editViewController = segue.destinationViewController as? EditTableViewController
       if let indexPath = tableView.indexPathForSelectedRow {
